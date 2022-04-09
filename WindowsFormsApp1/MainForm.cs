@@ -34,13 +34,17 @@ namespace WindowsFormsApp1
         void ReadAllObjects()
         {
             objList.Clear();
-            string[] line = File.ReadAllLines("Objects.txt");
-            
-        }
+            string[] lines = File.ReadAllLines("Objects.txt");
+            foreach (string line in lines)
+            {
+                string[] parts = line.Split(new string[] { "," }, StringSplitOptions.None);
+                objList.Add(new objects(parts[0],Convert.ToInt32(parts[1]),parts[2]));
+            }
+         }
         public MainForm()
         {
             InitializeComponent();
-            //ReadAllObjects();
+            ReadAllObjects();
             
             int x = 30;
             int y = 10;
@@ -60,10 +64,7 @@ namespace WindowsFormsApp1
                     x = 30;
                     y = y + 200;
                 }
-
-
             }
-
         }
 
         private void button1_Click(object sender, EventArgs e)
