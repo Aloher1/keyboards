@@ -35,9 +35,9 @@ namespace WindowsFormsApp1
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -112,12 +112,15 @@ namespace WindowsFormsApp1
             this.panel1.Size = new System.Drawing.Size(1181, 113);
             this.panel1.TabIndex = 5;
             // 
-            // panel2
+            // label3
             // 
-            this.panel2.Location = new System.Drawing.Point(0, 113);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1181, 640);
-            this.panel2.TabIndex = 6;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(348, 28);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(102, 29);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Фильтр";
             // 
             // label2
             // 
@@ -129,17 +132,14 @@ namespace WindowsFormsApp1
             this.label2.TabIndex = 5;
             this.label2.Text = "Цена";
             // 
-            // label3
+            // panel2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(348, 28);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 29);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Фильтр";
+            this.panel2.Location = new System.Drawing.Point(0, 113);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1181, 640);
+            this.panel2.TabIndex = 6;
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -147,7 +147,7 @@ namespace WindowsFormsApp1
             this.ClientSize = new System.Drawing.Size(1182, 753);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
