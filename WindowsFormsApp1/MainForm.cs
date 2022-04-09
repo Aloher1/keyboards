@@ -34,11 +34,18 @@ namespace WindowsFormsApp1
         void ReadAllObjects()
         {
             objList.Clear();
-            string[] lines = File.ReadAllLines("Objects.txt");
-            foreach (string line in lines)
+            try
             {
-                string[] parts = line.Split(new string[] { "," }, StringSplitOptions.None);
-                objList.Add(new objects(parts[0],Convert.ToInt32(parts[1]),parts[2]));
+                string[] lines = File.ReadAllLines("D:/IliaTemperature/keyboards/1.txt");
+                foreach (string line in lines)
+                {
+                    string[] parts = line.Split(new string[] { "," }, StringSplitOptions.None);
+                    objList.Add(new objects(parts[0], Convert.ToInt32(parts[1]), parts[2]));
+                }
+            }
+            catch
+            {
+                MessageBox.Show(":D");
             }
          }
         public MainForm()
