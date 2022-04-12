@@ -1,1 +1,2 @@
 GATERON RED SWITCHES,Переключатели,2
+DZ60 60% PCB,Плэйты,3
