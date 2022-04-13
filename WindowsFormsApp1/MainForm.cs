@@ -48,6 +48,7 @@ namespace WindowsFormsApp1
             
             int x = 30;
             int y = 10;
+            
             for(int i = 0; i < objList.Count; i++)
             {
                 objList[i].picture.Location = new Point(x, y);
@@ -55,17 +56,16 @@ namespace WindowsFormsApp1
                 objList[i].picture.SizeMode = PictureBoxSizeMode.StretchImage;
                 try
                 {
-                    objList[i].picture.Load("../../../Picture/" + objList[i].name + ".png");
-
+                    objList[i].picture.Image = Image.FromFile("../../../Pictures/" + objList[i].name + ".png");
                 }
-                catch(Exception) {  }
+                catch (Exception) { }
                 panel2.Controls.Add(objList[i].picture);
                 
                 objList[i].label.Location = new Point(x, y + 120);
                 objList[i].label.Size = new Size(120, 75);
                 objList[i].label.Text = objList[i].name;
                 panel2.Controls.Add(objList[i].label);
-
+                
                 x = x + 160;
                 if(x + 130 >= Width)
                 {
@@ -73,6 +73,7 @@ namespace WindowsFormsApp1
                     y = y + 200;
                 }
             }
+            //MessageBox.Show(objList.Count.ToString());
         }
 
         private void button1_Click(object sender, EventArgs e)
