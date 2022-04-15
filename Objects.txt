@@ -1,4 +1,3 @@
-sprite,Переключатели,3
 60% BAMBOO CASE,Корпуса,3
 TOFU84 case,Корпуса,3
 60% WALNUT CASE,Корпуса,3

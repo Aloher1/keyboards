@@ -56,7 +56,7 @@ namespace WindowsFormsApp1
                 objList[i].picture.SizeMode = PictureBoxSizeMode.StretchImage;
                 try
                 {
-                    objList[i].picture.Image = Image.FromFile("../../../Pictures/" + objList[i].name + ".png");
+                    objList[i].picture.Image = Image.FromFile("../../../Pictures/" + objList[i].name + ".jpg");
                 }
                 catch (Exception) { }
                 panel2.Controls.Add(objList[i].picture);
@@ -64,19 +64,24 @@ namespace WindowsFormsApp1
                 objList[i].label.Location = new Point(x, y + 120);
                 objList[i].label.Size = new Size(120, 75);
                 objList[i].label.Text = objList[i].name;
+                //objList [i].label.TextAlign = ContentAlignment.MiddleCenter;
                 panel2.Controls.Add(objList[i].label);
                 
                 x = x + 160;
-                if(x + 130 >= Width)
+                if(x + 130 >= Width - 250)
                 {
                     x = 30;
                     y = y + 200;
                 }
             }
-            //MessageBox.Show(objList.Count.ToString());
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
         {
 
         }
