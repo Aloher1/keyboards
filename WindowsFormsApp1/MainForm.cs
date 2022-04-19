@@ -73,9 +73,18 @@ namespace WindowsFormsApp1
                     x = 30;
                     y = y + 200;
                 }
+
+                objList[i].picture.Tag = objList[i].name;
+                objList[i].picture.AccessibleDescription = objList[i].price.ToString();
+                objList[i].picture.Click += new EventHandler(openProduct);
             }
         }
-
+        private void openProduct(object sender, EventArgs e)
+        {
+            PictureBox pb = (PictureBox)sender;
+            ProductForm form = new ProductForm(pb.Tag.ToString(), pb.AccessibleDescription);
+            form.Show();
+        }
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -84,6 +93,12 @@ namespace WindowsFormsApp1
         private void MainForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBoxCart_Click(object sender, EventArgs e)
+        {
+            CartForm form = new CartForm();
+            form.Show();
         }
     }
 }

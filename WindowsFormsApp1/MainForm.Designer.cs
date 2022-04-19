@@ -165,6 +165,7 @@ namespace WindowsFormsApp1
             this.pictureBoxCart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxCart.TabIndex = 8;
             this.pictureBoxCart.TabStop = false;
+            this.pictureBoxCart.Click += new System.EventHandler(this.pictureBoxCart_Click);
             // 
             // pictureBox1
             // 
