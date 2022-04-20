@@ -31,6 +31,7 @@ namespace WindowsFormsApp1
     public partial class MainForm : Form
     {  
         public static List<objects> objList = new List<objects>();
+        public static List<objects> cart = new List<objects>();
         void ReadAllObjects()
         {
             objList.Clear();

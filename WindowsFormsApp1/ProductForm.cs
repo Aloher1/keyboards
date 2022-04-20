@@ -23,10 +23,30 @@ namespace WindowsFormsApp1
                     product = choosenproduct;
                 }
             }
-            label2.Text = product.name;
-            label3.Text = product.price + " руб.";
             pictureBox1.Image = product.picture.Image;
-            
+            label2.Text = product.name;
+            label3.Text = product.price + " руб.";       
+        }
+       
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Location = new Point(100, 0);
+            pictureBox1.Size = new Size(600, 600);
+            //if(MouseButtons.Left(Point ))
+        }
+
+        private void ProductForm_MouseClick(object sender, MouseEventArgs e)
+        {
+            pictureBox1.Location = new Point(600, 12);
+            pictureBox1.Size = new Size(170, 170);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MainForm.cart.Add(product);
+            Program.cartPrice = Program.cartPrice + product.price;
+            label4.Visible = true;
         }
     }
 }
