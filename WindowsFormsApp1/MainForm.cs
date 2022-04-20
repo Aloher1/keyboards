@@ -74,7 +74,17 @@ namespace WindowsFormsApp1
                     x = 30;
                     y = y + 200;
                 }
+
+                objList[i].picture.Tag = objList[i].name;
+                objList[i].picture.AccessibleDescription = objList[i].price.ToString();
+                objList[i].picture.Click += new EventHandler(openProduct);
             }
+        }
+        private void openProduct(object sender, EventArgs e)
+        {
+            PictureBox pb = (PictureBox)sender;
+            ProductForm form = new ProductForm(pb.Tag.ToString(), pb.AccessibleDescription);
+            form.Show();
         }
 
         private void SearchButton_Click(object sender, EventArgs e)
@@ -101,7 +111,6 @@ namespace WindowsFormsApp1
                 }
                 objList[i].label.Visible = objList[i].picture.Visible;
             }
-
         }
 
         private void ApplyButton_Click(object sender, EventArgs e)
@@ -111,14 +120,15 @@ namespace WindowsFormsApp1
             for (int i = 0; i < objList.Count; i++)
             {
                 objList[i].picture.Visible = true;
+                bool getCategory = false;
                 foreach (string category in checkedListBox1.CheckedItems)
                 {
-                    if (!objList[i].category.Contains(category) && checkedListBox1.CheckedItems.Count > 0)
-                    {
-                        objList[i].picture.Visible = false;
-                        //MessageBox.Show(category);
-                    }
+                    if (objList[i].category.Contains(category))
+                        getCategory = true;
                 }
+                if(!getCategory && checkedListBox1.CheckedItems.Count  > 0)
+                    objList[i].picture.Visible = false;
+                
                 if (objList[i].picture.Visible)
                 {
                     objList[i].picture.Location = new Point(x, y);
@@ -137,6 +147,16 @@ namespace WindowsFormsApp1
         {
 
         }
+        private void pictureBoxCart_Click(object sender, EventArgs e)
+        {
+            CartForm form = new CartForm();
+            form.Show();
+        }
 
+        private void UserPictureBox_Click(object sender, EventArgs e)
+        {
+            UserForm form = new UserForm();
+            form.Show();
+        }
     }
 }

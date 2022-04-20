@@ -34,6 +34,7 @@ namespace WindowsFormsApp1
             this.SearchButton = new System.Windows.Forms.Button();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ApplyButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,15 +42,14 @@ namespace WindowsFormsApp1
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.pictureBoxCart = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.UserPictureBox = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.ApplyButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UserPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,6 +100,18 @@ namespace WindowsFormsApp1
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(334, 715);
             this.panel1.TabIndex = 5;
+            // 
+            // ApplyButton
+            // 
+            this.ApplyButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ApplyButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
+            this.ApplyButton.Location = new System.Drawing.Point(63, 664);
+            this.ApplyButton.Name = "ApplyButton";
+            this.ApplyButton.Size = new System.Drawing.Size(197, 38);
+            this.ApplyButton.TabIndex = 8;
+            this.ApplyButton.Text = "Применить\r\n";
+            this.ApplyButton.UseVisualStyleBackColor = false;
+            this.ApplyButton.Click += new System.EventHandler(this.ApplyButton_Click);
             // 
             // label1
             // 
@@ -170,6 +182,7 @@ namespace WindowsFormsApp1
             this.pictureBoxCart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxCart.TabIndex = 8;
             this.pictureBoxCart.TabStop = false;
+            this.pictureBoxCart.Click += new System.EventHandler(this.pictureBoxCart_Click);
             // 
             // pictureBox1
             // 
@@ -182,16 +195,17 @@ namespace WindowsFormsApp1
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox2
+            // UserPictureBox
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(1432, 11);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(107, 98);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 10;
-            this.pictureBox2.TabStop = false;
+            this.UserPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("UserPictureBox.Image")));
+            this.UserPictureBox.Location = new System.Drawing.Point(1432, 11);
+            this.UserPictureBox.Margin = new System.Windows.Forms.Padding(4);
+            this.UserPictureBox.Name = "UserPictureBox";
+            this.UserPictureBox.Size = new System.Drawing.Size(107, 98);
+            this.UserPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.UserPictureBox.TabIndex = 10;
+            this.UserPictureBox.TabStop = false;
+            this.UserPictureBox.Click += new System.EventHandler(this.UserPictureBox_Click);
             // 
             // pictureBox3
             // 
@@ -204,18 +218,6 @@ namespace WindowsFormsApp1
             this.pictureBox3.TabIndex = 11;
             this.pictureBox3.TabStop = false;
             // 
-            // ApplyButton
-            // 
-            this.ApplyButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ApplyButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
-            this.ApplyButton.Location = new System.Drawing.Point(63, 664);
-            this.ApplyButton.Name = "ApplyButton";
-            this.ApplyButton.Size = new System.Drawing.Size(197, 38);
-            this.ApplyButton.TabIndex = 8;
-            this.ApplyButton.Text = "Применить\r\n";
-            this.ApplyButton.UseVisualStyleBackColor = false;
-            this.ApplyButton.Click += new System.EventHandler(this.ApplyButton_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -224,7 +226,7 @@ namespace WindowsFormsApp1
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1685, 838);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.UserPictureBox);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBoxCart);
             this.Controls.Add(this.pictureBoxLogo);
@@ -244,7 +246,7 @@ namespace WindowsFormsApp1
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UserPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -263,7 +265,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.PictureBox pictureBoxLogo;
         private System.Windows.Forms.PictureBox pictureBoxCart;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox UserPictureBox;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button ApplyButton;
     }

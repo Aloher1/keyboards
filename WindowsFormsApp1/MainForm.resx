@@ -254,7 +254,7 @@
   <data name="pictureBoxCart.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAACweSURBVHhe7d0H
+        EAAACxABrSO9dQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAACweSURBVHhe7d0H
         tGZlefZxepcm0lFUYIYAQjQgIH35qWChCEpLVDQqAh9DsXwIBoIGDKhBBUVACBpBlCKfFBugIkXpIAxV
         qgygImVghgGS63YWGWbmPudt+3nuZz/7/1vrv7ISI5yz9zlnn/OWfc0zhPnVFupL6kr1iHpO/XfGnlIP
         qJvVr9RpapLaUi2lAABAQxZVn1GPKu+iXEovquvUYWpdBQAAhvQ+9aDyLrild7s6RL1SAQCAPsyrDlf2
@@ -630,10 +630,10 @@
         pXmm5tl6Y3T2ssdf/u7/AJivoW/W04QhAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="UserPictureBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAW
-        4QAAFuEBbL1qGAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAADnfSURBVHhe7d13
+        4AAAFuABvvqI/AAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAADnfSURBVHhe7d13
         uC1Flf7xIecMEgREMIAMQQEBEQOYQFR0BEFEQRAwiygmxDyimAOi4zAqJgQTooAoivGnoCMKMhgxYiQj
         KKi/d8k+D33rvvecs09V9+7e9f3j8zyyvOes2t1Vq/r07q76t3/+858AJmCpf1t6ZdlcdpP/kKfLq+S9
         cpb8P7lYLpdfyO/lGrlZbh3971/KJfINOUc+JvHzb5KXy3PlKXKUHCvx+98ip8jpEj8TP/sDuUL+JL+S
