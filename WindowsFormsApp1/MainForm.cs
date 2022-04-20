@@ -46,6 +46,7 @@ namespace WindowsFormsApp1
             InitializeComponent();
             ReadAllObjects();
             
+            
             int x = 30;
             int y = 10;
             
@@ -76,14 +77,66 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void SearchButton_Click(object sender, EventArgs e)
         {
+            int x = 30;
+            int y = 10;
+
+            for (int i = 0; i < objList.Count; i++)
+            {
+                objList[i].picture.Visible = true;
+                if (textBox1.Text != "" && 
+                    !objList[i].name.Contains(textBox1.Text))
+                    objList[i].picture.Visible = false;
+                if (objList[i].picture.Visible)
+                {
+                    objList[i].picture.Location = new Point(x, y);
+                    objList[i].label.Location = new Point(x, y + 120);
+                    x = x + 160;
+                    if (x + 130 >= Width - 250)
+                    {
+                        x = 30;
+                        y = y + 200;
+                    }
+                }
+                objList[i].label.Visible = objList[i].picture.Visible;
+            }
 
         }
 
+        private void ApplyButton_Click(object sender, EventArgs e)
+        {
+            int x = 30;
+            int y = 10;
+            for (int i = 0; i < objList.Count; i++)
+            {
+                objList[i].picture.Visible = true;
+                foreach (string category in checkedListBox1.CheckedItems)
+                {
+                    if (!objList[i].category.Contains(category) && checkedListBox1.CheckedItems.Count > 0)
+                    {
+                        objList[i].picture.Visible = false;
+                        //MessageBox.Show(category);
+                    }
+                }
+                if (objList[i].picture.Visible)
+                {
+                    objList[i].picture.Location = new Point(x, y);
+                    objList[i].label.Location = new Point(x, y + 120);
+                    x = x + 160;
+                    if (x + 130 >= Width - 250)
+                    {
+                        x = 30;
+                        y = y + 200;
+                    }
+                }
+                objList[i].label.Visible = objList[i].picture.Visible;
+            }
+        }
         private void MainForm_Load(object sender, EventArgs e)
         {
 
         }
+
     }
 }

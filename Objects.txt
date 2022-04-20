@@ -1,30 +1,30 @@
-60% BAMBOO CASE,Корпуса,3
-TOFU84 case,Корпуса,3
-60% WALNUT CASE,Корпуса,3
-A60 ALUMINIUM CASE 60%,Корпуса,3
-POSEIDON PSD60,Корпуса,3
+60% BAMBOO CASE,		Корпуса,3
+TOFU84 case,			Корпуса,3
+60% WALNUT CASE,		Корпуса,3
+A60 ALUMINIUM CASE 60%,		Корпуса,3
+POSEIDON PSD60,			Корпуса,3
 TOFU60 ACRYLIC FROSTED 60% CASE,Корпуса,3
-ALOPOW 60% RESIN,Корпуса,3
-KBD67 LITE ABS,Корпуса,3
-60% BRASS ANSI PLATE,Плэйты,3
-KBD75 PLATE,Плэйты,3
-TOFU84 ALUMINUM PLATE,Плэйты,3
-DZ60RGB V2 PLATE,Плэйты,3
-KBDPAD MARK II PLATE,Плэйты,3
-KBD67 MARK II RGB V3 PCB,Платы,3
-TOFU96 SOLDERED PCB,Платы,3
-KBD67 REV2 65% PCB,Платы,3
-KBD75 REV 2.0 PCB,Платы,3
-DZ60 60% PCB,Платы,3
-DZ60RGB V2 PCB,Платы,3
-DZ60RGB-ANSI V2 PCB,Платы,3
-DZ65 RGB V3  PCB,Платы,3
-KBD75 RGB PCB,Платы,3
-KBDPAD MARK II PCB,Платы,3
-GATERON BLACK SWITCHES,Переключатели,3
-GATERON BROWN SWITCHES,Переключатели,3
-GATERON CLEAR SWITCHES,Переключатели,3
-GATERON GREEN SWITCHES,Переключатели,3
-GATERON RED SWITCHES,Переключатели,3
+ALOPOW 60% RESIN,		Корпуса,3
+KBD67 LITE ABS,			Корпуса,3
+60% BRASS ANSI PLATE,	  Плейты,3
+KBD75 PLATE,		  Плейты,3
+TOFU84 ALUMINUM PLATE,	  Плейты,3
+DZ60RGB V2 PLATE,         Плейты,3
+KBDPAD MARK II PLATE,     Плейты,3
+KBD67 MARK II RGB V3 PCB, Платы,3
+TOFU96 SOLDERED PCB,	  Платы,3
+KBD67 REV2 65% PCB,       Платы,3
+KBD75 REV 2.0 PCB,        Платы,3
+DZ60 60% PCB,             Платы,3
+DZ60RGB V2 PCB,           Платы,3
+DZ60RGB-ANSI V2 PCB,      Платы,3
+DZ65 RGB V3  PCB,         Платы,3
+KBD75 RGB PCB,            Платы,3
+KBDPAD MARK II PCB,       Платы,3
+GATERON BLACK SWITCHES,  Переключатели,3
+GATERON BROWN SWITCHES,  Переключатели,3
+GATERON CLEAR SWITCHES,  Переключатели,3
+GATERON GREEN SWITCHES,  Переключатели,3
+GATERON RED SWITCHES,    Переключатели,3
 Kailh Box Brown Switches,Переключатели,3
-Kailh Box Red Switches,Переключатели,3
+Kailh Box Red Switches,  Переключатели,3
