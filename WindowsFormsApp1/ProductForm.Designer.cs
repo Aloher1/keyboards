@@ -40,12 +40,11 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.5F);
             this.label1.Location = new System.Drawing.Point(12, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 22);
+            this.label1.Size = new System.Drawing.Size(582, 540);
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             // 
@@ -128,7 +127,6 @@
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ProductForm_MouseClick);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

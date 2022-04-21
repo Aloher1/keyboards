@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace WindowsFormsApp1
 {
@@ -23,9 +24,13 @@ namespace WindowsFormsApp1
                     product = choosenproduct;
                 }
             }
+            label1.Text = File.ReadAllText("../../../Files/" + tag + ".txt");
             pictureBox1.Image = product.picture.Image;
             label2.Text = product.name;
-            label3.Text = product.price + " руб.";       
+            if (product.category == "Переключатели")
+                label3.Text = product.price + " руб/шт";
+            else
+                label3.Text = product.price + " руб.";
         }
        
 

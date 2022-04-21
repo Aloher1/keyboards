@@ -113,7 +113,7 @@ namespace WindowsFormsApp1
                 objList[i].label.Visible = objList[i].picture.Visible;
             }
         }
-
+        //Фильтры
         private void ApplyButton_Click(object sender, EventArgs e)
         {
             int x = 30;
@@ -122,14 +122,16 @@ namespace WindowsFormsApp1
             {
                 objList[i].picture.Visible = true;
                 bool getCategory = false;
-                foreach (string category in checkedListBox1.CheckedItems)
+                foreach (string category in CategoryCheckedListBox.CheckedItems)
                 {
                     if (objList[i].category.Contains(category))
                         getCategory = true;
                 }
-                if(!getCategory && checkedListBox1.CheckedItems.Count  > 0)
+                if(!getCategory && CategoryCheckedListBox.CheckedItems.Count  > 0)
                     objList[i].picture.Visible = false;
                 
+                
+                //foreach (int price in PriceCheckedListBox.CheckedItems)
                 if (objList[i].picture.Visible)
                 {
                     objList[i].picture.Location = new Point(x, y);
@@ -158,6 +160,11 @@ namespace WindowsFormsApp1
         {
             UserForm form = new UserForm();
             form.Show();
+        }
+
+        private void numericUpDown2_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
