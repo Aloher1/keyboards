@@ -42,12 +42,14 @@ namespace WindowsFormsApp1
                 objList.Add(new objects(parts[0], parts[1], Convert.ToInt32(parts[2])));
             }
          }
+        
         public MainForm()
         {
             InitializeComponent();
             ReadAllObjects();
-            
-            
+
+            numericUpDown1.Text = objList.Min(obj => obj.price).ToString();
+            numericUpDown2.Text = objList.Max(obj=> obj.price).ToString();
             int x = 30;
             int y = 10;
             
@@ -130,8 +132,45 @@ namespace WindowsFormsApp1
                 if(!getCategory && CategoryCheckedListBox.CheckedItems.Count  > 0)
                     objList[i].picture.Visible = false;
                 
+                if(PriceCheckedListBox.CheckedIndices.Contains(0))
+                {
+                    numericUpDown1.Text = objList.Min(objects => objects.price).ToString();
+                    numericUpDown2.Text = "1000";
+                }
+                else if (PriceCheckedListBox.CheckedIndices.Contains(1))
+                {
+                    numericUpDown1.Text = "1001";
+                    numericUpDown2.Text = "2000";
+                }
+                else if (PriceCheckedListBox.CheckedIndices.Contains(2))
+                {
+                    numericUpDown1.Text = "2001";
+                    numericUpDown2.Text = "4000";
+                }
+                else if (PriceCheckedListBox.CheckedIndices.Contains(3))
+                {
+                    numericUpDown1.Text = "4001";
+                    numericUpDown2.Text = "7000";
+                }
+                else if (PriceCheckedListBox.CheckedIndices.Contains(4))
+                {
+                    numericUpDown1.Text = "7001";
+                    numericUpDown2.Text = objList.Max(objects => objects.price).ToString();
+                }
+                else
+                {
+                    numericUpDown1.Text = objList.Min(objects => objects.price).ToString();
+                    numericUpDown2.Text = objList.Max(objects => objects.price).ToString();
+                }
                 
-                //foreach (int price in PriceCheckedListBox.CheckedItems)
+                if (numericUpDown1.Text != "0" & numericUpDown2.Text != "0")
+                {
+                    if (numericUpDown1.Value > objList[i].price || objList[i].price > numericUpDown2.Value) 
+                    {
+                            objList[i].picture.Visible = false;
+                    }
+                }
+                
                 if (objList[i].picture.Visible)
                 {
                     objList[i].picture.Location = new Point(x, y);
