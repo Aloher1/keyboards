@@ -24,7 +24,7 @@ namespace WindowsFormsApp1
                     product = choosenproduct;
                 }
             }
-            label1.Text = File.ReadAllText("../../../Files/" + tag + ".txt");
+            //label1.Text = File.ReadAllText("../../../Files/" + tag + ".txt");
             pictureBox1.Image = product.picture.Image;
             label2.Text = product.name;
             if (product.category == "Переключатели")

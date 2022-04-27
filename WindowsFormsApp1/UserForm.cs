@@ -98,6 +98,7 @@ namespace WindowsFormsApp1
                 if (login == "")            MessageBox.Show("Вы не зарегистрированы");
                 else if (login == "admin")  MessageBox.Show("Вы вошли в аккаунт админа");
                 else                        MessageBox.Show("Вы вошли в аккаунт");
+                Close();
             }
         }
     }

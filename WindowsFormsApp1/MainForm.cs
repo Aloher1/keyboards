@@ -184,11 +184,7 @@ namespace WindowsFormsApp1
                 }
                 objList[i].label.Visible = objList[i].picture.Visible;
             }
-        }
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
-        }
+        }        
         private void pictureBoxCart_Click(object sender, EventArgs e)
         {
             CartForm form = new CartForm();
@@ -201,9 +197,15 @@ namespace WindowsFormsApp1
             form.Show();
         }
 
-        private void numericUpDown2_ValueChanged(object sender, EventArgs e)
+        private void pictureBoxAdd_Click(object sender, EventArgs e)
         {
-
+            if (UserForm.login == "admin")
+            {
+                AddForm form = new AddForm();
+                form.Show();
+            }
+            else
+                MessageBox.Show("Вы не админ");
         }
     }
 }
