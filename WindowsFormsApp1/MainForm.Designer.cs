@@ -60,6 +60,8 @@ namespace WindowsFormsApp1
             // 
             // textBox1
             // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox1.Location = new System.Drawing.Point(333, 12);
@@ -71,6 +73,7 @@ namespace WindowsFormsApp1
             // 
             // SearchButton
             // 
+            this.SearchButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.SearchButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.SearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.SearchButton.Location = new System.Drawing.Point(1072, 11);
@@ -98,6 +101,8 @@ namespace WindowsFormsApp1
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.AutoScroll = true;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.PriceCheckedListBox);
@@ -166,6 +171,7 @@ namespace WindowsFormsApp1
             // 
             // ApplyButton
             // 
+            this.ApplyButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ApplyButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ApplyButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
             this.ApplyButton.Location = new System.Drawing.Point(63, 665);
@@ -216,13 +222,16 @@ namespace WindowsFormsApp1
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.AutoScroll = true;
             this.panel2.BackColor = System.Drawing.SystemColors.Window;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Location = new System.Drawing.Point(333, 123);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1351, 715);
+            this.panel2.Size = new System.Drawing.Size(1352, 715);
             this.panel2.TabIndex = 6;
             // 
             // pictureBoxLogo
@@ -238,6 +247,7 @@ namespace WindowsFormsApp1
             // 
             // pictureBoxCart
             // 
+            this.pictureBoxCart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxCart.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxCart.Image")));
             this.pictureBoxCart.Location = new System.Drawing.Point(1200, 12);
             this.pictureBoxCart.Margin = new System.Windows.Forms.Padding(4);
@@ -250,6 +260,7 @@ namespace WindowsFormsApp1
             // 
             // pictureBoxAdd
             // 
+            this.pictureBoxAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxAdd.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxAdd.Image")));
             this.pictureBoxAdd.Location = new System.Drawing.Point(1316, 11);
             this.pictureBoxAdd.Margin = new System.Windows.Forms.Padding(4);
@@ -262,6 +273,7 @@ namespace WindowsFormsApp1
             // 
             // UserPictureBox
             // 
+            this.UserPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.UserPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("UserPictureBox.Image")));
             this.UserPictureBox.Location = new System.Drawing.Point(1432, 11);
             this.UserPictureBox.Margin = new System.Windows.Forms.Padding(4);
@@ -274,6 +286,7 @@ namespace WindowsFormsApp1
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(1548, 11);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);

@@ -49,7 +49,7 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MainForm.cart.Add(product);
+            MainForm.cart.Add(product, 1);
             Program.cartPrice = Program.cartPrice + product.price;
             label4.Visible = true;
         }

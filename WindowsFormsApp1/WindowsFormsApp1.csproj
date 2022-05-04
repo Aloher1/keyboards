@@ -60,6 +60,12 @@
     <Compile Include="CartForm.Designer.cs">
       <DependentUpon>CartForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CartUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CartUC.Designer.cs">
+      <DependentUpon>CartUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CartForm.resx">
       <DependentUpon>CartForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CartUC.resx">
+      <DependentUpon>CartUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

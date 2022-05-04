@@ -31,7 +31,8 @@ namespace WindowsFormsApp1
     public partial class MainForm : Form
     {  
         public static List<objects> objList = new List<objects>();
-        public static List<objects> cart = new List<objects>();
+        public static Dictionary<objects, int> cart = new Dictionary<objects, int>();
+        
         void ReadAllObjects()
         {
             objList.Clear();
@@ -47,9 +48,10 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             ReadAllObjects();
+            
 
             numericUpDown1.Text = objList.Min(obj => obj.price).ToString();
-            numericUpDown2.Text = objList.Max(obj=> obj.price).ToString();
+            numericUpDown2.Text = objList.Max(obj => obj.price).ToString();
             int x = 30;
             int y = 10;
             
@@ -99,7 +101,7 @@ namespace WindowsFormsApp1
             {
                 objList[i].picture.Visible = true;
                 if (textBox1.Text != "" && 
-                    !objList[i].name.Contains(textBox1.Text))
+                    !objList[i].name.Contains(textBox1.Text.ToUpper()))
                     objList[i].picture.Visible = false;
                 if (objList[i].picture.Visible)
                 {
@@ -207,5 +209,13 @@ namespace WindowsFormsApp1
             else
                 MessageBox.Show("Вы не админ");
         }
+
+        /*private void textBox1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter) 
+            {
+                MessageBox.Show("123");
+            }
+        }*/
     }
 }
