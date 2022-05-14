@@ -31,7 +31,11 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             ReadLogInfo();
-            if (login != "") MessageBox.Show("Вы уже вошли");
+            if (login != "")
+            {
+                MessageBox.Show("Вы уже вошли");
+                Close();
+            }
             //logInfo.Add("admin");   logInfo.Add("admin");
         }
 
@@ -55,6 +59,7 @@ namespace WindowsFormsApp1
             if (registration == false)
             {
                 registration = true;
+                linkLabel1.Location = new Point(340, 9);
                 linkLabel1.Text = "Вход";
                 label2.Text = "Регистрация";
                 button1.Text = "Зарегистрироваться";
@@ -62,6 +67,7 @@ namespace WindowsFormsApp1
             else if (registration == true)
             {
                 registration = false;
+                linkLabel1.Location = new Point(270, 9);
                 linkLabel1.Text = "Регистрация";
                 label2.Text = "Вход";
                 button1.Text = "Войти";
@@ -69,10 +75,10 @@ namespace WindowsFormsApp1
         }
         
         private void button1_Click(object sender, EventArgs e)
-    {
+        {
             if (registration == true)
             {
-                for (int i = 0; i < logInfo.Count; i = i + 2)
+               for (int i = 0; i < logInfo.Count; i = i + 2)
                 {
                     if (textBox1.Text != "" & textBox2.Text != "")
                     {
@@ -91,7 +97,7 @@ namespace WindowsFormsApp1
             {
                 for (int i = 0; i < logInfo.Count; i = i + 2)
                 {
-                    if (textBox1.Text != "" && textBox2.Text != "" && 
+                    if (textBox1.Text != ""         && textBox2.Text != "" && 
                         textBox1.Text == logInfo[i] && textBox2.Text == logInfo[i + 1])
                     {   login = textBox1.Text;  }
                 }

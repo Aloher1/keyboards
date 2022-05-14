@@ -28,11 +28,18 @@ namespace WindowsFormsApp1
             category = category1;
         }
     }
+    public struct priceIndecies
+    {
+        public int min;
+        public int max;
+    }
+
     public partial class MainForm : Form
     {  
         public static List<objects> objList = new List<objects>();
         public static Dictionary<objects, int> cart = new Dictionary<objects, int>();
-        
+        public priceIndecies[] ind = new priceIndecies[5];
+
         void ReadAllObjects()
         {
             objList.Clear();
@@ -49,13 +56,17 @@ namespace WindowsFormsApp1
             InitializeComponent();
             ReadAllObjects();
             
-
             numericUpDown1.Text = objList.Min(obj => obj.price).ToString();
             numericUpDown2.Text = objList.Max(obj => obj.price).ToString();
             int x = 30;
             int y = 10;
+            ind[0].min = objList.Min(obj => obj.price); ind[1].min = 1001;  
+            ind[0].max = 1000;                          ind[1].max = 2000;  
             
-            for(int i = 0; i < objList.Count; i++)
+            ind[2].min = 2001;    ind[3].min = 4001;    ind[4].min = 7001;
+            ind[2].max = 4000;    ind[3].max = 7000;    ind[4].max = objList.Max(obj => obj.price);
+            
+            for (int i = 0; i < objList.Count; i++)
             {
                 objList[i].picture.Location = new Point(x, y);
                 objList[i].picture.Size = new Size(120, 120);
@@ -122,6 +133,19 @@ namespace WindowsFormsApp1
         {
             int x = 30;
             int y = 10;
+            //Цена
+            if (PriceCheckedListBox.CheckedIndices.Count > 0)
+            {
+                List<priceIndecies> Checked = new List<priceIndecies>();
+                for (int i = 0; i < ind.Length; i++)
+                {
+                    if (PriceCheckedListBox.CheckedIndices.Contains(i))
+                        Checked.Add(ind[i]); 
+                }
+                numericUpDown1.Text = Checked.Min(priceIndecies => priceIndecies.min).ToString();
+                numericUpDown2.Text = Checked.Max(priceIndecies => priceIndecies.max).ToString();
+            }
+            //Категория
             for (int i = 0; i < objList.Count; i++)
             {
                 objList[i].picture.Visible = true;
@@ -134,43 +158,10 @@ namespace WindowsFormsApp1
                 if(!getCategory && CategoryCheckedListBox.CheckedItems.Count  > 0)
                     objList[i].picture.Visible = false;
                 
-                if(PriceCheckedListBox.CheckedIndices.Contains(0))
-                {
-                    numericUpDown1.Text = objList.Min(objects => objects.price).ToString();
-                    numericUpDown2.Text = "1000";
-                }
-                else if (PriceCheckedListBox.CheckedIndices.Contains(1))
-                {
-                    numericUpDown1.Text = "1001";
-                    numericUpDown2.Text = "2000";
-                }
-                else if (PriceCheckedListBox.CheckedIndices.Contains(2))
-                {
-                    numericUpDown1.Text = "2001";
-                    numericUpDown2.Text = "4000";
-                }
-                else if (PriceCheckedListBox.CheckedIndices.Contains(3))
-                {
-                    numericUpDown1.Text = "4001";
-                    numericUpDown2.Text = "7000";
-                }
-                else if (PriceCheckedListBox.CheckedIndices.Contains(4))
-                {
-                    numericUpDown1.Text = "7001";
-                    numericUpDown2.Text = objList.Max(objects => objects.price).ToString();
-                }
-                else
-                {
-                    numericUpDown1.Text = objList.Min(objects => objects.price).ToString();
-                    numericUpDown2.Text = objList.Max(objects => objects.price).ToString();
-                }
-                
                 if (numericUpDown1.Text != "0" & numericUpDown2.Text != "0")
                 {
-                    if (numericUpDown1.Value > objList[i].price || objList[i].price > numericUpDown2.Value) 
-                    {
-                            objList[i].picture.Visible = false;
-                    }
+                    if (numericUpDown1.Value > objList[i].price || objList[i].price > numericUpDown2.Value)
+                    { objList[i].picture.Visible = false; }
                 }
                 
                 if (objList[i].picture.Visible)

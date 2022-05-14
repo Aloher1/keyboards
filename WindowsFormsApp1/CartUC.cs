@@ -14,28 +14,36 @@ namespace WindowsFormsApp1
     {
         int n;
         objects obj1;
-        public CartUC(objects obj, int value)
+        Label l;
+        public CartUC(objects obj, int value, Label label)
         {
             obj1 = obj;
             n = value;
-       //     label1.Text = n.ToString();
+            l = label;
+            //label1.Text = n.ToString();
             InitializeComponent();
             ProductPB.Image = obj1.picture.Image;
             label2.Text = obj1.name;
         }
 
-        private void plusPB_Click(object sender, EventArgs e)
+
+        public void plusPB_Click(object sender, EventArgs e)
         {
             n++;
             Program.cartPrice += obj1.price;
             label1.Text = n.ToString();
+            l.Text = "К оплате: " + Program.cartPrice;
         }
 
-        private void minusPB_Click(object sender, EventArgs e)
+        public void minusPB_Click(object sender, EventArgs e)
         {
-            Program.cartPrice -= obj1.price;
-            n--;
-            label1.Text = n.ToString();
+            if (n != 0)
+            {
+                n--;
+                Program.cartPrice -= obj1.price;
+                label1.Text = n.ToString();
+                l.Text = "К оплате: " + Program.cartPrice;
+            }
         }
     }
 }

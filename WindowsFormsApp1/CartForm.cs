@@ -12,19 +12,25 @@ namespace WindowsFormsApp1
 {
     public partial class CartForm : Form
     {
+        public string LabelText
+        {
+            get { return this.label1.Text; }
+            set { this.label1.Text = value; }
+        }
         public CartForm()
         {
             InitializeComponent();
+            label1.Text = label1.Text + Program.cartPrice + "руб.";
             int y = 10;
-            foreach (KeyValuePair <objects, int> pair in MainForm.cart)
+            foreach (KeyValuePair<objects, int> pair in MainForm.cart)
             {
-                CartUC obj = new CartUC(pair.Key, pair.Value);
+                CartUC obj = new CartUC(pair.Key, pair.Value, this.label1);
                 obj.Location = new Point(10, y);
                 panel1.Controls.Add(obj);
-              
+
                 y += 150;
             }
-            label1.Text = label1.Text + Program.cartPrice + "руб.";
         }
+        
     }
 }
