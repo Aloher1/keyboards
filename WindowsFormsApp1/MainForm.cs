@@ -81,7 +81,6 @@ namespace WindowsFormsApp1
                 objList[i].label.Location = new Point(x, y + 120);
                 objList[i].label.Size = new Size(120, 75);
                 objList[i].label.Text = objList[i].name;
-                //objList [i].label.TextAlign = ContentAlignment.MiddleCenter;
                 panel2.Controls.Add(objList[i].label);
                 
                 x = x + 160;
@@ -96,13 +95,18 @@ namespace WindowsFormsApp1
                 objList[i].picture.Click += new EventHandler(openProduct);
             }
         }
+        /// <summary>
+        /// Открытие товара
+        /// </summary>
         private void openProduct(object sender, EventArgs e)
         {
             PictureBox pb = (PictureBox)sender;
             ProductForm form = new ProductForm(pb.Tag.ToString(), pb.AccessibleDescription);
             form.Show();
         }
-
+        /// <summary>
+        /// Кнопка поиска
+        /// </summary>
         private void SearchButton_Click(object sender, EventArgs e)
         {
             int x = 30;
@@ -128,12 +132,16 @@ namespace WindowsFormsApp1
                 objList[i].label.Visible = objList[i].picture.Visible;
             }
         }
-        //Фильтры
+        /// <summary>
+        /// Кнопка применить
+        /// </summary>
         private void ApplyButton_Click(object sender, EventArgs e)
         {
             int x = 30;
             int y = 10;
-            //Цена
+            //
+            //  Цена
+            //
             if (PriceCheckedListBox.CheckedIndices.Count > 0)
             {
                 List<priceIndecies> Checked = new List<priceIndecies>();
@@ -145,7 +153,9 @@ namespace WindowsFormsApp1
                 numericUpDown1.Text = Checked.Min(priceIndecies => priceIndecies.min).ToString();
                 numericUpDown2.Text = Checked.Max(priceIndecies => priceIndecies.max).ToString();
             }
-            //Категория
+            //
+            //  Категория
+            //
             for (int i = 0; i < objList.Count; i++)
             {
                 objList[i].picture.Visible = true;
@@ -200,13 +210,5 @@ namespace WindowsFormsApp1
             else
                 MessageBox.Show("Вы не админ");
         }
-
-        /*private void textBox1_KeyUp(object sender, KeyEventArgs e)
-        {
-            if(e.KeyCode == Keys.Enter) 
-            {
-                MessageBox.Show("123");
-            }
-        }*/
     }
 }

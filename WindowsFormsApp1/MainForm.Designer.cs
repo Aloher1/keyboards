@@ -130,7 +130,7 @@ namespace WindowsFormsApp1
             "4001 - 7000р",
             "7001р и больше"});
             this.PriceCheckedListBox.Location = new System.Drawing.Point(15, 226);
-            this.PriceCheckedListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PriceCheckedListBox.Margin = new System.Windows.Forms.Padding(4);
             this.PriceCheckedListBox.Name = "PriceCheckedListBox";
             this.PriceCheckedListBox.Size = new System.Drawing.Size(293, 89);
             this.PriceCheckedListBox.TabIndex = 12;
@@ -159,7 +159,7 @@ namespace WindowsFormsApp1
             // 
             this.numericUpDown2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.numericUpDown2.Location = new System.Drawing.Point(196, 192);
-            this.numericUpDown2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericUpDown2.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDown2.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -205,7 +205,7 @@ namespace WindowsFormsApp1
             "Платы",
             "Кейкапы"});
             this.CategoryCheckedListBox.Location = new System.Drawing.Point(15, 62);
-            this.CategoryCheckedListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CategoryCheckedListBox.Margin = new System.Windows.Forms.Padding(4);
             this.CategoryCheckedListBox.Name = "CategoryCheckedListBox";
             this.CategoryCheckedListBox.Size = new System.Drawing.Size(294, 87);
             this.CategoryCheckedListBox.TabIndex = 6;
@@ -231,14 +231,14 @@ namespace WindowsFormsApp1
             this.panel2.Location = new System.Drawing.Point(333, 123);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1351, 715);
+            this.panel2.Size = new System.Drawing.Size(1352, 715);
             this.panel2.TabIndex = 6;
             // 
             // pictureBoxLogo
             // 
             this.pictureBoxLogo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogo.Image")));
             this.pictureBoxLogo.Location = new System.Drawing.Point(101, 14);
-            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
             this.pictureBoxLogo.Size = new System.Drawing.Size(120, 106);
             this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -250,7 +250,7 @@ namespace WindowsFormsApp1
             this.pictureBoxCart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxCart.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxCart.Image")));
             this.pictureBoxCart.Location = new System.Drawing.Point(1200, 12);
-            this.pictureBoxCart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBoxCart.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxCart.Name = "pictureBoxCart";
             this.pictureBoxCart.Size = new System.Drawing.Size(107, 98);
             this.pictureBoxCart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -263,7 +263,7 @@ namespace WindowsFormsApp1
             this.pictureBoxAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxAdd.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxAdd.Image")));
             this.pictureBoxAdd.Location = new System.Drawing.Point(1316, 11);
-            this.pictureBoxAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBoxAdd.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxAdd.Name = "pictureBoxAdd";
             this.pictureBoxAdd.Size = new System.Drawing.Size(107, 98);
             this.pictureBoxAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -276,7 +276,7 @@ namespace WindowsFormsApp1
             this.UserPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.UserPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("UserPictureBox.Image")));
             this.UserPictureBox.Location = new System.Drawing.Point(1432, 11);
-            this.UserPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UserPictureBox.Margin = new System.Windows.Forms.Padding(4);
             this.UserPictureBox.Name = "UserPictureBox";
             this.UserPictureBox.Size = new System.Drawing.Size(107, 98);
             this.UserPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -289,7 +289,7 @@ namespace WindowsFormsApp1
             this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(1548, 11);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(107, 98);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -316,8 +316,8 @@ namespace WindowsFormsApp1
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
-            this.Resize += new System.EventHandler(this.SearchButton_Click);
+            this.Text = "Главная";
+            this.Resize += new System.EventHandler(this.ApplyButton_Click);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -32,6 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.BuyButton = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // panel1
@@ -39,20 +40,22 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.AutoScroll = true;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(500, 561);
+            this.panel1.Size = new System.Drawing.Size(665, 690);
             this.panel1.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(506, 45);
+            this.label1.Location = new System.Drawing.Point(675, 55);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 24);
+            this.label1.Size = new System.Drawing.Size(130, 29);
             this.label1.TabIndex = 1;
             this.label1.Text = "К оплате: ";
             // 
@@ -62,24 +65,34 @@
             this.BuyButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BuyButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.BuyButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BuyButton.Location = new System.Drawing.Point(510, 96);
+            this.BuyButton.Location = new System.Drawing.Point(680, 118);
+            this.BuyButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BuyButton.Name = "BuyButton";
-            this.BuyButton.Size = new System.Drawing.Size(262, 45);
+            this.BuyButton.Size = new System.Drawing.Size(349, 55);
             this.BuyButton.TabIndex = 2;
             this.BuyButton.Text = "Купить";
             this.BuyButton.UseVisualStyleBackColor = false;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(680, 642);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(349, 36);
+            this.textBox1.TabIndex = 3;
+            // 
             // CartForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(1045, 690);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.BuyButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CartForm";
             this.Text = "Корзина";
             this.ResumeLayout(false);
@@ -92,5 +105,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BuyButton;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

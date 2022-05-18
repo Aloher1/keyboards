@@ -32,7 +32,7 @@ namespace WindowsFormsApp1
             n++;
             Program.cartPrice += obj1.price;
             label1.Text = n.ToString();
-            l.Text = "К оплате: " + Program.cartPrice;
+            l.Text = "К оплате: " + Program.cartPrice + " руб.";
         }
 
         public void minusPB_Click(object sender, EventArgs e)
@@ -42,7 +42,7 @@ namespace WindowsFormsApp1
                 n--;
                 Program.cartPrice -= obj1.price;
                 label1.Text = n.ToString();
-                l.Text = "К оплате: " + Program.cartPrice;
+                l.Text = "К оплате: " + Program.cartPrice + " руб.";
             }
         }
     }

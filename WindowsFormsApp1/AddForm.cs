@@ -21,9 +21,11 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            openFileDialog1.ShowDialog();
-            address = openFileDialog1.FileName;
-            pictureBox1.Image = Image.FromFile(address);
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                address = openFileDialog1.FileName;
+                pictureBox1.Image = Image.FromFile(address);
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

@@ -12,11 +12,6 @@ namespace WindowsFormsApp1
 {
     public partial class CartForm : Form
     {
-        public string LabelText
-        {
-            get { return this.label1.Text; }
-            set { this.label1.Text = value; }
-        }
         public CartForm()
         {
             InitializeComponent();

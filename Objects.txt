@@ -28,3 +28,4 @@ GATERON GREEN SWITCHES,Переключатели,318
 GATERON RED SWITCHES,Переключатели,318
 Kailh Box Brown Switches,Переключатели,302
 Kailh Box Red Switches,Переключатели,302
+qwe,Переключатели,123
