@@ -44,6 +44,11 @@ namespace WindowsFormsApp1
                 label1.Text = n.ToString();
                 l.Text = "К оплате: " + Program.cartPrice + " руб.";
             }
+            if(n == 0)
+            {
+                MainForm.cart.Remove(obj1);
+                this.Parent = null;
+            }
         }
     }
 }

@@ -33,6 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.BuyButton = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // panel1
@@ -40,10 +41,10 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.AutoScroll = true;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(665, 690);
             this.panel1.TabIndex = 0;
@@ -65,21 +66,31 @@
             this.BuyButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BuyButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.BuyButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BuyButton.Location = new System.Drawing.Point(680, 118);
-            this.BuyButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BuyButton.Location = new System.Drawing.Point(680, 193);
+            this.BuyButton.Margin = new System.Windows.Forms.Padding(4);
             this.BuyButton.Name = "BuyButton";
-            this.BuyButton.Size = new System.Drawing.Size(349, 55);
+            this.BuyButton.Size = new System.Drawing.Size(352, 55);
             this.BuyButton.TabIndex = 2;
             this.BuyButton.Text = "Купить";
             this.BuyButton.UseVisualStyleBackColor = false;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(680, 642);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.Location = new System.Drawing.Point(680, 150);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(349, 36);
+            this.textBox1.Size = new System.Drawing.Size(352, 36);
             this.textBox1.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(675, 105);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(349, 42);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Введите почту";
             // 
             // CartForm
             // 
@@ -87,6 +98,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1045, 690);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.BuyButton);
             this.Controls.Add(this.label1);
@@ -106,5 +118,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BuyButton;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label2;
     }
 }

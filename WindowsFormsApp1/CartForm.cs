@@ -22,10 +22,8 @@ namespace WindowsFormsApp1
                 CartUC obj = new CartUC(pair.Key, pair.Value, this.label1);
                 obj.Location = new Point(10, y);
                 panel1.Controls.Add(obj);
-
                 y += 150;
             }
         }
-        
     }
 }

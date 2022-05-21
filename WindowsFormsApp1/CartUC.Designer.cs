@@ -63,7 +63,7 @@ namespace WindowsFormsApp1
             // 
             this.plusPB.BackColor = System.Drawing.Color.Transparent;
             this.plusPB.Image = ((System.Drawing.Image)(resources.GetObject("plusPB.Image")));
-            this.plusPB.Location = new System.Drawing.Point(150, 80);
+            this.plusPB.Location = new System.Drawing.Point(144, 80);
             this.plusPB.Name = "plusPB";
             this.plusPB.Size = new System.Drawing.Size(25, 25);
             this.plusPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -74,7 +74,7 @@ namespace WindowsFormsApp1
             // minusPB
             // 
             this.minusPB.Image = ((System.Drawing.Image)(resources.GetObject("minusPB.Image")));
-            this.minusPB.Location = new System.Drawing.Point(200, 80);
+            this.minusPB.Location = new System.Drawing.Point(206, 80);
             this.minusPB.Name = "minusPB";
             this.minusPB.Size = new System.Drawing.Size(25, 25);
             this.minusPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

@@ -38,7 +38,6 @@ namespace WindowsFormsApp1
             if (address != "")
                 File.Copy(address, "../../../Pictures/" + textBoxName.Text + ".jpg");
             MessageBox.Show("Успешно");
-            
         }
     }
 }

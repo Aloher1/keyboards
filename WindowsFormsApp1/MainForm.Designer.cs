@@ -79,7 +79,7 @@ namespace WindowsFormsApp1
             this.SearchButton.Location = new System.Drawing.Point(1072, 11);
             this.SearchButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(107, 39);
+            this.SearchButton.Size = new System.Drawing.Size(101, 39);
             this.SearchButton.TabIndex = 2;
             this.SearchButton.Text = "Поиск";
             this.SearchButton.UseVisualStyleBackColor = false;
