@@ -1,0 +1,6 @@
+Software Support: VIA
+Layout: 63 Keys layout only
+PCB Port: Type-C
+RGB support: Per-Key RGB on top, no RGB underglow
+PCB Version: Hot-swap
+Note: This PCB supports arrow keys option

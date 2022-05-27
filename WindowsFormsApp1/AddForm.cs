@@ -13,10 +13,24 @@ namespace WindowsFormsApp1
 {
     public partial class AddForm : Form
     {
+        void rename(Dictionary<string, string> words)
+        {
+            label1.Text = words["Описание"];
+            label2.Text = words["Категория"];
+            label3.Text = words["Цена"];
+            label4.Text = words["Название"];
+            comboBox1.Text = words["Выберите категорию"];
+            button1.Text = words["Выбрать картинку"];
+            button2.Text = words["Добавить"];
+        }
         string address = "";
         public AddForm()
         {
             InitializeComponent();
+            if (Program.language == "eng")
+                rename(MainForm.eng);
+            else
+                rename(MainForm.rus);
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -1,0 +1,2 @@
+Alumimum material
+Compatible with DZ60 Rev 3.0 soldered PCB, DZ60 RGB-ANSI/DZ60RGB V2 Hot-swap PCB

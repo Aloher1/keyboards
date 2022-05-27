@@ -1,0 +1,22 @@
+Поиск,Search
+Категория,Category
+Цена,Price
+Применить,Apply
+Название,Name
+Описание,Description
+Выбрать картинку,Choose picture
+Выберите категорию,Choose category
+Добавить,Add
+Введите почту,Enter your email
+Купить,Buy
+К оплате:,To pay:
+Добавлено,Added
+Добавить в корзину,Add to cart
+Вход,Login
+Регистрация,Registration
+Логин,Login
+Пароль,Password
+Войти,Login
+от,from
+до,to
+руб.,rub

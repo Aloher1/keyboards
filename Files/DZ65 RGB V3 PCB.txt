@@ -1,0 +1,6 @@
+Wired version
+Compatible with Tofu65 case
+Software Support: VIA
+PCB Port: Type-C
+RGB support: Per-key RGB
+PCB Version: Hot-swap

@@ -1,0 +1,6 @@
+Software Support: VIA
+PCB Port: Type-C
+PCB Version: Solder
+RGB support: RGB underglow 
+
+Only Compatible with KBDPAD MarK II case

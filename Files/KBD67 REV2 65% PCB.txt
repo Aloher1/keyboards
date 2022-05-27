@@ -1,0 +1,8 @@
+Software Support: VIA
+Size: 65% layout
+PCB Port: Type-C
+PCB Version: Solder
+RGB support: RGB underglow 
+
+Compatible with the Tofu65 case, but it only has 4 screw holes to support this PCB.
+The PCB is NOT compatible with KBD67 MarK II, KBD67 V3, KBD67 Lite cases.

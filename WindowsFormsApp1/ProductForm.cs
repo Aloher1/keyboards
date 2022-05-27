@@ -14,9 +14,20 @@ namespace WindowsFormsApp1
     public partial class ProductForm : Form
     {
         objects product;
+        void rename(Dictionary<string, string> words)
+        {
+            label4.Text = words["Добавлено"];
+            button1.Text = words["Добавить в корзину"];
+        }
+        
         public ProductForm(string tag, string price)
         {
             InitializeComponent();
+            if (Program.language == "eng")
+                rename(MainForm.eng);
+            else
+                rename(MainForm.rus);
+
             foreach(objects choosenproduct in MainForm.objList)
             {
                 if(choosenproduct.name == tag)
@@ -24,11 +35,11 @@ namespace WindowsFormsApp1
                     product = choosenproduct;
                 }
             }
-            //label1.Text = File.ReadAllText("../../../Files/" + tag + ".txt");
+            label1.Text = File.ReadAllText("../../../Files/" + tag + ".txt");
             pictureBox1.Image = product.picture.Image;
             label2.Text = product.name;
-            if (product.category == "Переключатели")
-                label3.Text = product.price + " руб/шт";
+            if (Program.language == "eng")
+                label3.Text = product.price + " rub";
             else
                 label3.Text = product.price + " руб.";
         }
@@ -49,7 +60,11 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MainForm.cart.Add(product, 1);
+            if (MainForm.cart.ContainsKey(product))
+                MainForm.cart[product]++;
+            else
+                MainForm.cart.Add(product, 1);
+            
             Program.cartPrice = Program.cartPrice + product.price;
             label4.Visible = true;
         }

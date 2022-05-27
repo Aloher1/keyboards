@@ -26,17 +26,29 @@ namespace WindowsFormsApp1
                 logInfo.Add(parts[0]);  logInfo.Add(parts[1]);
             }
         }
+        void rename(Dictionary<string, string> words)
+        {
+            linkLabel1.Text = words["Регистрация"];
+            label1.Text = words["Логин"];
+            label2.Text = words["Вход"];
+            label3.Text = words["Пароль"];
+            button1.Text = words["Войти"];
+        }
 
         public UserForm()
         {
             InitializeComponent();
             ReadLogInfo();
+            if (Program.language == "eng")
+                rename(MainForm.eng);
+            else
+                rename(MainForm.rus);
+
             if (login != "")
             {
                 MessageBox.Show("Вы уже вошли");
                 Close();
             }
-            //logInfo.Add("admin");   logInfo.Add("admin");
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -60,17 +72,35 @@ namespace WindowsFormsApp1
             {
                 registration = true;
                 linkLabel1.Location = new Point(340, 9);
-                linkLabel1.Text = "Вход";
-                label2.Text = "Регистрация";
-                button1.Text = "Зарегистрироваться";
+                if (Program.language == "eng")
+                {
+                    linkLabel1.Text = "Login";
+                    label2.Text = "Registration";
+                    button1.Text = "Register";
+                }
+                else
+                {
+                    linkLabel1.Text = "Вход";
+                    label2.Text = "Регистрация";
+                    button1.Text = "Зарегистрироваться";
+                }
             }
             else if (registration == true)
             {
                 registration = false;
                 linkLabel1.Location = new Point(270, 9);
-                linkLabel1.Text = "Регистрация";
-                label2.Text = "Вход";
-                button1.Text = "Войти";
+                if (Program.language == "eng")
+                {
+                    linkLabel1.Text = "Registration";
+                    label2.Text = "Login";
+                    button1.Text = "Login";
+                }
+                else
+                {
+                    linkLabel1.Text = "Регистрация";
+                    label2.Text = "Вход";
+                    button1.Text = "Войти";
+                }
             }
         }
         

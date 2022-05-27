@@ -1,0 +1,10 @@
+Software Support: VIA
+PCB Port: Type-C
+Layout: 75% fixed Layout (84 keys)
+RGB support: RGB underglow 
+QMK, VIA support (Pre-flashed with VIA compatible firmware already)
+
+Only compatible with KBD75 v3/ v3.1, D84 case
+NOT compatible with the Tofu84 case
+Case foam: KBD75 case foam (Hot-swap Version)
+PCB foam: KBD75 PCB foam 

@@ -20,8 +20,8 @@ namespace WindowsFormsApp1
             obj1 = obj;
             n = value;
             l = label;
-            //label1.Text = n.ToString();
             InitializeComponent();
+            label1.Text = n.ToString();
             ProductPB.Image = obj1.picture.Image;
             label2.Text = obj1.name;
         }

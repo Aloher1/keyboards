@@ -37,7 +37,11 @@ namespace WindowsFormsApp1
     public partial class MainForm : Form
     {  
         public static List<objects> objList = new List<objects>();
-        public static Dictionary<objects, int> cart = new Dictionary<objects, int>();
+        public static Dictionary<objects, int> cart = new Dictionary<objects, int>(); 
+        
+        public static Dictionary<string, string> rus = new Dictionary<string, string>();
+        public static Dictionary<string, string> eng = new Dictionary<string, string>();
+        
         public priceIndecies[] ind = new priceIndecies[5];
 
         void ReadAllObjects()
@@ -49,12 +53,39 @@ namespace WindowsFormsApp1
                 string[] parts = line.Split(new string[] { "," }, StringSplitOptions.None);
                 objList.Add(new objects(parts[0], parts[1], Convert.ToInt32(parts[2])));
             }
-         }
+        }
+
+        public static void translate()
+        {
+            string[] ruslines = File.ReadAllLines("../../../Translate/rus.txt");
+            foreach (string line in ruslines)
+            {
+                string[] parts = line.Split(new string[] { "," }, StringSplitOptions.None);
+                rus.Add(parts[0], parts[1]);
+            }
+
+            string[] englines = File.ReadAllLines("../../../Translate/eng.txt");
+            foreach (string line in englines)
+            {
+                string[] parts = line.Split(new string[] { "," }, StringSplitOptions.None);
+                eng.Add(parts[0], parts[1]);
+            }
+        }
         
+        void rename(Dictionary<string, string> words)
+        {
+            SearchButton.Text = words["Поиск"];
+            label1.Text = words["Категория"];
+            label2.Text = words["Цена"];
+            labelFrom.Text = words["от"];
+            labelTo.Text = words["до"];
+            ApplyButton.Text = words["Применить"];
+        }
         public MainForm()
         {
             InitializeComponent();
             ReadAllObjects();
+            translate();
             
             numericUpDown1.Text = objList.Min(obj => obj.price).ToString();
             numericUpDown2.Text = objList.Max(obj => obj.price).ToString();
@@ -209,6 +240,43 @@ namespace WindowsFormsApp1
             }
             else
                 MessageBox.Show("Вы не админ");
+        }
+        
+        private void DocPictureBox_Click(object sender, EventArgs e)
+        {
+            panel3.Visible = !panel3.Visible;
+        }
+        
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://vk.com/@neonicdevicesforpc-klaviatury-sleng-i-terminy");
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://vk.com/@neonicdevicesforpc-korpus-mehanicheskoi-klaviatury");
+        }
+
+        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://vk.com/@exvperi-vse-chto-nuzhno-znat-pri-vybore-profilya-keikapov");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (Program.language == "rus")
+            {
+                rename(eng);
+                Program.language = "eng";
+                button1.Text = "EN";
+            }
+            else
+            {
+                rename(rus);
+                Program.language = "rus";
+                button1.Text = "RU";
+            }
+            
         }
     }
 }
