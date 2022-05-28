@@ -22,6 +22,11 @@ namespace WindowsFormsApp1
             comboBox1.Text = words["Выберите категорию"];
             button1.Text = words["Выбрать картинку"];
             button2.Text = words["Добавить"];
+            comboBox1.Items[0] = words["Корпуса"];
+            comboBox1.Items[1] = words["Плейты"];
+            comboBox1.Items[2] = words["Платы"];
+            comboBox1.Items[3] = words["Переключатели"];
+            comboBox1.Items[4] = words["Кейкапы"];
         }
         string address = "";
         public AddForm()

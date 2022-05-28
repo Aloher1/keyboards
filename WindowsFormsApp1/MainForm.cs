@@ -80,6 +80,13 @@ namespace WindowsFormsApp1
             labelFrom.Text = words["от"];
             labelTo.Text = words["до"];
             ApplyButton.Text = words["Применить"];
+            CategoryCheckedListBox.Items[0] = words["Корпуса"];
+            CategoryCheckedListBox.Items[1] = words["Плейты"];
+            CategoryCheckedListBox.Items[2] = words["Переключатели"];
+            CategoryCheckedListBox.Items[3] = words["Платы"];
+            CategoryCheckedListBox.Items[4] = words["Кейкапы"];
+            PriceCheckedListBox.Items[0] = words["менее"] + "1000р";
+            PriceCheckedListBox.Items[4] = words["больше"] + " " + "7001р";
         }
         public MainForm()
         {
@@ -126,18 +133,18 @@ namespace WindowsFormsApp1
                 objList[i].picture.Click += new EventHandler(openProduct);
             }
         }
-        /// <summary>
+        ///
         /// Открытие товара
-        /// </summary>
+        ///
         private void openProduct(object sender, EventArgs e)
         {
             PictureBox pb = (PictureBox)sender;
             ProductForm form = new ProductForm(pb.Tag.ToString(), pb.AccessibleDescription);
             form.Show();
         }
-        /// <summary>
+        ///
         /// Кнопка поиска
-        /// </summary>
+        ///
         private void SearchButton_Click(object sender, EventArgs e)
         {
             int x = 30;
@@ -163,9 +170,9 @@ namespace WindowsFormsApp1
                 objList[i].label.Visible = objList[i].picture.Visible;
             }
         }
-        /// <summary>
+        ///
         /// Кнопка применить
-        /// </summary>
+        ///
         private void ApplyButton_Click(object sender, EventArgs e)
         {
             int x = 30;
@@ -187,12 +194,13 @@ namespace WindowsFormsApp1
             //
             //  Категория
             //
+            rename(rus);
             for (int i = 0; i < objList.Count; i++)
             {
                 objList[i].picture.Visible = true;
                 bool getCategory = false;
                 foreach (string category in CategoryCheckedListBox.CheckedItems)
-                {
+                {   
                     if (objList[i].category.Contains(category))
                         getCategory = true;
                 }
@@ -218,6 +226,8 @@ namespace WindowsFormsApp1
                 }
                 objList[i].label.Visible = objList[i].picture.Visible;
             }
+            if (Program.language == "eng")
+                rename(eng);
         }        
         private void pictureBoxCart_Click(object sender, EventArgs e)
         {
@@ -261,7 +271,9 @@ namespace WindowsFormsApp1
         {
             System.Diagnostics.Process.Start("https://vk.com/@exvperi-vse-chto-nuzhno-znat-pri-vybore-profilya-keikapov");
         }
-
+        //
+        //  Перевод
+        //
         private void button1_Click(object sender, EventArgs e)
         {
             if (Program.language == "rus")

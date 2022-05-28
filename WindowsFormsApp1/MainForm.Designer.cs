@@ -29,6 +29,7 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.SearchButton = new System.Windows.Forms.Button();
@@ -53,6 +54,7 @@ namespace WindowsFormsApp1
             this.UserPictureBox = new System.Windows.Forms.PictureBox();
             this.DocPictureBox = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
@@ -135,7 +137,7 @@ namespace WindowsFormsApp1
             "1001 - 2000р",
             "2001 - 4000р",
             "4001 - 7000р",
-            "7001р и больше"});
+            "больше 7001р"});
             this.PriceCheckedListBox.Location = new System.Drawing.Point(11, 184);
             this.PriceCheckedListBox.Name = "PriceCheckedListBox";
             this.PriceCheckedListBox.Size = new System.Drawing.Size(221, 79);
@@ -339,6 +341,7 @@ namespace WindowsFormsApp1
             this.DocPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.DocPictureBox.TabIndex = 11;
             this.DocPictureBox.TabStop = false;
+            this.toolTip1.SetToolTip(this.DocPictureBox, "About keyboards");
             this.DocPictureBox.Click += new System.EventHandler(this.DocPictureBox_Click);
             // 
             // button1
@@ -416,6 +419,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 

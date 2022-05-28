@@ -20,3 +20,10 @@
 от,from
 до,to
 руб.,rub
+Корпуса,Cases
+Плейты,Plates
+Переключатели,Switches
+Платы,PCBs
+Кейкапы,Keycaps
+менее,less than
+больше,over
