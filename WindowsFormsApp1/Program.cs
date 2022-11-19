@@ -10,7 +10,8 @@ namespace WindowsFormsApp1
     {
         public static int    cartPrice = 0;
         public static string language = "rus";
-           
+        public static string login = "";
+
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>

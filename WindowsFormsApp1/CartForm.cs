@@ -42,7 +42,7 @@ namespace WindowsFormsApp1
         private void BuyButton_Click(object sender, EventArgs e)
         {
             MailAddress fromAddress = new MailAddress("moonwalker7070@gmail.com", "магазин");
-            MailAddress toAddress = new MailAddress(textBox1.Text, UserForm.login);
+            MailAddress toAddress = new MailAddress(textBox1.Text, Program.login);
             MailMessage message = new MailMessage(fromAddress.ToString(), toAddress.ToString());
             message.Body = "спасибо";
             message.Subject = "Спасибо за покупку!";

@@ -8,11 +8,77 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
 
 namespace WindowsFormsApp1
 {
     public partial class AddForm : Form
     {
+        DBconnect db = new DBconnect();
+        class DBconnect
+        {
+            MySqlConnection conn;
+            MySqlConnectionStringBuilder db;
+
+            public DBconnect()
+            {
+                Initialize();
+            }
+
+            public void Add(string name, string category, string price)
+            {
+                string sql = "INSERT INTO `dbkeyboards`.`table1` ( `id` , `name` , `category` , `price` ) VALUES ( '', @name, @category, @price )";
+                if (OpenConnection())
+                {
+                    using (MySqlCommand cmd = new MySqlCommand(sql, conn))
+                    {
+                        // Добавить параметры
+                        cmd.Parameters.AddWithValue("@name", name);
+                        cmd.Parameters.AddWithValue("@category", category);
+                        cmd.Parameters.AddWithValue("@price", price);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                    CloseConnection();
+                }
+            }
+            private void Initialize()
+            {
+                db = new MySqlConnectionStringBuilder();
+                db.Server = "sql7.freesqldatabase.com";        // хостинг БД
+                db.Database = "sql7575921";                    // имя БД
+                db.UserID = "sql7575921";                      // имя пользователя
+                db.Password = "crhQxPWpVp";                    // пароль
+                db.CharacterSet = "utf8";                      // кодировка БД
+                conn = new MySqlConnection(db.ConnectionString);
+            }
+            private bool OpenConnection()
+            {
+                try
+                {
+                    conn.Open();
+                    return true;
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return false;
+                }
+            }
+            private void CloseConnection()
+            {
+                try
+                {
+                    conn.Close();
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            
+        }
         void rename(Dictionary<string, string> words)
         {
             label1.Text = words["Описание"];
@@ -49,13 +115,9 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            File.AppendAllText("../../../Objects.txt", Environment.NewLine +
-                textBoxName.Text + "," + comboBox1.Text + "," + textBoxPrice.Text);
-            FileStream file = File.Create("../../../Files/" + textBoxName.Text + ".txt");
-            file.Close();
-            File.WriteAllText("../../../Files/" + textBoxName.Text + ".txt", textBox1.Text);
-            if (address != "")
-                File.Copy(address, "../../../Pictures/" + textBoxName.Text + ".jpg");
+            db.Add(textBoxName.Text, comboBox1.Text, textBoxPrice.Text);
+            
+
             MessageBox.Show("Успешно");
         }
     }

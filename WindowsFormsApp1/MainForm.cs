@@ -8,25 +8,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApp1
 {
     public struct objects
     {
+        public int id;
         public PictureBox picture;
         public string name;
         public Label label;
         public int price;
         public string category;
 
-        public objects(string name1, string category1, int price1)
+        /*public objects(string name1, string category1, int price1)
         {
             picture = new PictureBox();
             name = name1;
             label = new Label();
             price = price1;
             category = category1;
-        }
+        }*/
     }
     public struct priceIndecies
     {
@@ -35,8 +37,85 @@ namespace WindowsFormsApp1
     }
 
     public partial class MainForm : Form
-    {  
-        public static List<objects> objList = new List<objects>();
+    {
+        class DBconnect
+        {
+            MySqlConnection conn;
+            MySqlConnectionStringBuilder db;
+
+            public DBconnect()
+            {
+                Initialize();
+            }
+            private void Initialize()
+            {
+                db = new MySqlConnectionStringBuilder();
+                db.Server = "sql7.freesqldatabase.com";        // хостинг БД
+                db.Database = "sql7575921";                    // имя БД
+                db.UserID = "sql7575921";                      // имя пользователя
+                db.Password = "crhQxPWpVp";                    // пароль
+                db.CharacterSet = "utf8";                      // кодировка БД
+                conn = new MySqlConnection(db.ConnectionString);
+            }
+            private bool OpenConnection()
+            {
+                try
+                {
+                    conn.Open();
+                    return true;
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return false;
+                }
+            }
+            private void CloseConnection()
+            {
+                try
+                {
+                    conn.Close();
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            public List<objects> objList()
+            {
+                string sql = "SELECT * FROM table1";
+                List<objects> list = new List<objects>();
+
+                if (OpenConnection())
+                {
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        objects obj = new objects();
+                        obj.id = reader.GetInt32(0);
+                        obj.name = reader.GetString(1);
+                        obj.category = reader.GetString(2);
+                        obj.price = reader.GetInt32(3);
+                        obj.picture = new PictureBox();
+                        obj.label = new Label();
+                        obj.label.Text = obj.name;
+                        list.Add(obj);
+                    }
+                    CloseConnection();
+                }
+                return list;
+            }
+        }
+        public struct priceIndecies
+        {
+            public int min;
+            public int max;
+        }
+
+        DBconnect db = new DBconnect();
+        //public static List<objects> objList = new List<objects>();
         public static Dictionary<objects, int> cart = new Dictionary<objects, int>(); 
         
         public static Dictionary<string, string> rus = new Dictionary<string, string>();
@@ -44,7 +123,7 @@ namespace WindowsFormsApp1
         
         public priceIndecies[] ind = new priceIndecies[5];
 
-        void ReadAllObjects()
+        /*void ReadAllObjects()
         {
             objList.Clear();
             string[] lines = File.ReadAllLines("../../../Objects.txt");
@@ -53,7 +132,7 @@ namespace WindowsFormsApp1
                 string[] parts = line.Split(new string[] { "," }, StringSplitOptions.None);
                 objList.Add(new objects(parts[0], parts[1], Convert.ToInt32(parts[2])));
             }
-        }
+        }*/
 
         public static void translate()
         {
@@ -91,47 +170,50 @@ namespace WindowsFormsApp1
         public MainForm()
         {
             InitializeComponent();
-            ReadAllObjects();
+            //ReadAllObjects();
             translate();
             
-            numericUpDown1.Text = objList.Min(obj => obj.price).ToString();
-            numericUpDown2.Text = objList.Max(obj => obj.price).ToString();
+            numericUpDown1.Text = db.objList().Min(obj => obj.price).ToString();
+            numericUpDown2.Text = db.objList().Max(obj => obj.price).ToString();
             int x = 30;
             int y = 10;
-            ind[0].min = objList.Min(obj => obj.price); ind[1].min = 1001;  
+            ind[0].min = db.objList().Min(obj => obj.price); ind[1].min = 1001;  
             ind[0].max = 1000;                          ind[1].max = 2000;  
             
             ind[2].min = 2001;    ind[3].min = 4001;    ind[4].min = 7001;
-            ind[2].max = 4000;    ind[3].max = 7000;    ind[4].max = objList.Max(obj => obj.price);
+            ind[2].max = 4000;    ind[3].max = 7000;    ind[4].max = db.objList().Max(obj => obj.price);
             
-            for (int i = 0; i < objList.Count; i++)
+            //MessageBox.Show("https://localhost/" + db.objList()[1].name + ".jpg");
+            for (int i = 0; i < db.objList().Count; i++)
             {
-                objList[i].picture.Location = new Point(x, y);
-                objList[i].picture.Size = new Size(120, 120);
-                objList[i].picture.SizeMode = PictureBoxSizeMode.StretchImage;
+                //db.objList()[i].picture = new PictureBox();
+                db.objList()[i].picture.Location = new Point(x, y);
+                db.objList()[i].picture.Size = new Size(120, 120);
+                db.objList()[i].picture.SizeMode = PictureBoxSizeMode.StretchImage;
                 try
                 {
-                    objList[i].picture.Image = Image.FromFile("../../../Pictures/" + objList[i].name + ".jpg");
+                    db.objList()[i].picture.ImageLocation = "../../../Pictures/" + db.objList()[i].name + ".jpg";
+                    //db.objList()[i].picture.Image = Image.FromFile("../../../Pictures/" + db.objList()[i].name + ".jpg");
                 }
-                catch (Exception) { }
-                panel2.Controls.Add(objList[i].picture);
-                
-                objList[i].label.Location = new Point(x, y + 120);
-                objList[i].label.Size = new Size(120, 75);
-                objList[i].label.Text = objList[i].name;
-                panel2.Controls.Add(objList[i].label);
-                
+                catch (Exception ex) { MessageBox.Show(ex.Message); }
+                panel2.Controls.Add(db.objList()[i].picture);
+                // MessageBox.Show(x.ToString());
+                db.objList()[i].label.Location = new Point(x, y + 120);
+                db.objList()[i].label.Size = new Size(120, 75);
+                db.objList()[i].label.Text = db.objList()[i].label.Text;
+                panel2.Controls.Add(db.objList()[i].label);
+                //MessageBox.Show(db.objList()[i].label.Text + "---" + db.objList()[i].name);
                 x = x + 160;
-                if(x + 130 >= Width - 250)
+                if (x + 130 >= Width - 250)
                 {
                     x = 30;
                     y = y + 200;
                 }
-
-                objList[i].picture.Tag = objList[i].name;
-                objList[i].picture.AccessibleDescription = objList[i].price.ToString();
-                objList[i].picture.Click += new EventHandler(openProduct);
+                db.objList()[i].picture.Tag = db.objList()[i].name;
+                db.objList()[i].picture.AccessibleDescription = db.objList()[i].price.ToString();
+                db.objList()[i].picture.Click += new EventHandler(openProduct);
             }
+            //MessageBox.Show(db.objList()[0].picture.Image.Size.ToString());
         }
         ///
         /// Открытие товара
@@ -139,7 +221,7 @@ namespace WindowsFormsApp1
         private void openProduct(object sender, EventArgs e)
         {
             PictureBox pb = (PictureBox)sender;
-            ProductForm form = new ProductForm(pb.Tag.ToString(), pb.AccessibleDescription);
+            ProductForm form = new ProductForm(pb.Tag.ToString(), pb.AccessibleDescription, db.objList());
             form.Show();
         }
         ///
@@ -150,16 +232,16 @@ namespace WindowsFormsApp1
             int x = 30;
             int y = 10;
 
-            for (int i = 0; i < objList.Count; i++)
+            for (int i = 0; i < db.objList().Count; i++)
             {
-                objList[i].picture.Visible = true;
+                db.objList()[i].picture.Visible = true;
                 if (textBox1.Text != "" && 
-                    !objList[i].name.Contains(textBox1.Text.ToUpper()))
-                    objList[i].picture.Visible = false;
-                if (objList[i].picture.Visible)
+                    !db.objList()[i].name.Contains(textBox1.Text.ToUpper()))
+                    db.objList()[i].picture.Visible = false;
+                if (db.objList()[i].picture.Visible)
                 {
-                    objList[i].picture.Location = new Point(x, y);
-                    objList[i].label.Location = new Point(x, y + 120);
+                    db.objList()[i].picture.Location = new Point(x, y);
+                    db.objList()[i].label.Location = new Point(x, y + 120);
                     x = x + 160;
                     if (x + 130 >= Width - 250)
                     {
@@ -167,7 +249,7 @@ namespace WindowsFormsApp1
                         y = y + 200;
                     }
                 }
-                objList[i].label.Visible = objList[i].picture.Visible;
+                db.objList()[i].label.Visible = db.objList()[i].picture.Visible;
             }
         }
         ///
@@ -195,28 +277,28 @@ namespace WindowsFormsApp1
             //  Категория
             //
             rename(rus);
-            for (int i = 0; i < objList.Count; i++)
+            for (int i = 0; i < db.objList().Count; i++)
             {
-                objList[i].picture.Visible = true;
+                db.objList()[i].picture.Visible = true;
                 bool getCategory = false;
                 foreach (string category in CategoryCheckedListBox.CheckedItems)
                 {   
-                    if (objList[i].category.Contains(category))
+                    if (db.objList()[i].category.Contains(category))
                         getCategory = true;
                 }
                 if(!getCategory && CategoryCheckedListBox.CheckedItems.Count  > 0)
-                    objList[i].picture.Visible = false;
+                    db.objList()[i].picture.Visible = false;
                 
                 if (numericUpDown1.Text != "0" & numericUpDown2.Text != "0")
                 {
-                    if (numericUpDown1.Value > objList[i].price || objList[i].price > numericUpDown2.Value)
-                    { objList[i].picture.Visible = false; }
+                    if (numericUpDown1.Value > db.objList()[i].price || db.objList()[i].price > numericUpDown2.Value)
+                    { db.objList()[i].picture.Visible = false; }
                 }
                 
-                if (objList[i].picture.Visible)
+                if (db.objList()[i].picture.Visible)
                 {
-                    objList[i].picture.Location = new Point(x, y);
-                    objList[i].label.Location = new Point(x, y + 120);
+                    db.objList()[i].picture.Location = new Point(x, y);
+                    db.objList()[i].label.Location = new Point(x, y + 120);
                     x = x + 160;
                     if (x + 130 >= Width - 250)
                     {
@@ -224,8 +306,9 @@ namespace WindowsFormsApp1
                         y = y + 200;
                     }
                 }
-                objList[i].label.Visible = objList[i].picture.Visible;
+                db.objList()[i].label.Visible = db.objList()[i].picture.Visible;
             }
+
             if (Program.language == "eng")
                 rename(eng);
         }        
@@ -237,13 +320,20 @@ namespace WindowsFormsApp1
 
         private void UserPictureBox_Click(object sender, EventArgs e)
         {
-            UserForm form = new UserForm();
-            form.Show();
+            if (Program.login != "")
+            {
+                MessageBox.Show("Вы уже вошли");
+            }
+            else
+            {
+                UserForm form = new UserForm();
+                form.Show();
+            }
         }
 
         private void pictureBoxAdd_Click(object sender, EventArgs e)
         {
-            if (UserForm.login == "admin")
+            if (Program.login == "admin")
             {
                 AddForm form = new AddForm();
                 form.Show();
