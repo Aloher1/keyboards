@@ -14,8 +14,10 @@ namespace WindowsFormsApp1
 {
     public partial class CartForm : Form
     {
+        Program.DBconnect db = new Program.DBconnect();
         void rename(Dictionary<string, string> words)
         {
+            Program.DBconnect db = new Program.DBconnect();
             label1.Text = words["К оплате:"] + Program.cartPrice + words["руб."];
             label2.Text = words["Введите почту"];
             BuyButton.Text = words["Купить"];
@@ -24,9 +26,10 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             if (Program.language == "eng")
-                rename(MainForm.eng);
+                rename(db.eng());
             else
-                rename(MainForm.rus);
+                rename(db.rus());
+
             int y = 10;
             foreach (KeyValuePair<objects, int> pair in MainForm.cart)
             {
@@ -37,7 +40,7 @@ namespace WindowsFormsApp1
             }
         }
         //
-        //  Отправка письма на почту
+        //  Отправка письма на почту (не работает пока)
         //
         private void BuyButton_Click(object sender, EventArgs e)
         {

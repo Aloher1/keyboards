@@ -10,66 +10,8 @@ namespace WindowsFormsApp1
     public partial class ProductForm : Form
     {
         objects product;
-        DBconnect db = new DBconnect();
-        class DBconnect
-        {
-            MySqlConnection conn;
-            MySqlConnectionStringBuilder db;
+        Program.DBconnect db = new Program.DBconnect();
 
-            public DBconnect()
-            {
-                Initialize();
-            }
-            public void Delete(string name)
-            {
-                string sql = "DELETE FROM `dbkeyboards`.`table1` WHERE `table1`.`name` = @name";
-                if (OpenConnection())
-                {
-                    using (MySqlCommand cmd = new MySqlCommand(sql, conn))
-                    {
-                        // Добавить параметры
-                        cmd.Parameters.AddWithValue("@name", name);
-                        cmd.ExecuteNonQuery();
-                    }
-                    CloseConnection();
-                }
-
-            }
-            private void Initialize()
-            {
-                db = new MySqlConnectionStringBuilder();
-                db.Server = "sql7.freesqldatabase.com";        // хостинг БД
-                db.Database = "sql7575921";                    // имя БД
-                db.UserID = "sql7575921";                      // имя пользователя
-                db.Password = "crhQxPWpVp";                    // пароль
-                db.CharacterSet = "utf8";                      // кодировка БД
-                conn = new MySqlConnection(db.ConnectionString);
-            }
-            private bool OpenConnection()
-            {
-                try
-                {
-                    conn.Open();
-                    return true;
-                }
-                catch (MySqlException ex)
-                {
-                    MessageBox.Show(ex.Message);
-                    return false;
-                }
-            }
-            private void CloseConnection()
-            {
-                try
-                {
-                    conn.Close();
-                }
-                catch (MySqlException ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-        }
         void rename(Dictionary<string, string> words)
         {
             label4.Text = words["Добавлено"];
@@ -80,9 +22,9 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             if (Program.language == "eng")
-                rename(MainForm.eng);
+                rename(db.eng());
             else
-                rename(MainForm.rus);
+                rename(db.rus());
 
             foreach(objects choosenproduct in objList)
             {
@@ -91,8 +33,8 @@ namespace WindowsFormsApp1
                     product = choosenproduct;
                 }
             }
-            //label1.Text = File.ReadAllText("../../../Files/" + tag + ".txt");
-            pictureBox1.Image = product.picture.Image;
+            label1.Text = product.description;
+            pictureBox1.ImageLocation = "../../../Pictures/" + tag + ".jpg";
             label2.Text = product.name;
             if (Program.language == "eng")
                 label3.Text = product.price + " rub";
@@ -107,7 +49,6 @@ namespace WindowsFormsApp1
         {
             pictureBox1.Location = new Point(100, 0);
             pictureBox1.Size = new Size(600, 600);
-            //if(MouseButtons.Left(Point ))
         }
 
         private void ProductForm_MouseClick(object sender, MouseEventArgs e)

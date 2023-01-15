@@ -15,99 +15,8 @@ namespace WindowsFormsApp1
     public partial class UserForm : Form
     {
         bool registration = false;
-        DBconnect db = new DBconnect();
+        Program.DBconnect db = new Program.DBconnect();
 
-        /*void ReadLogInfo()
-        {
-            string[] lines = File.ReadAllLines("../../../loginInfo.txt");
-            foreach (string line in lines)
-            {
-                string[] parts = line.Split(new string[] { "," }, StringSplitOptions.None);
-                logInfo.Add(parts[0]);  logInfo.Add(parts[1]);
-            }
-        }*/
-        class DBconnect
-        {
-            MySqlConnection conn;
-            MySqlConnectionStringBuilder db;
-
-            public DBconnect()
-            {
-                Initialize();
-            }
-            private void Initialize()
-            {
-                db = new MySqlConnectionStringBuilder();
-                db.Server = "sql7.freesqldatabase.com";        // хостинг БД
-                db.Database = "sql7575921";                    // имя БД
-                db.UserID = "sql7575921";                      // имя пользователя
-                db.Password = "crhQxPWpVp";                    // пароль
-                db.CharacterSet = "utf8";                      // кодировка БД
-                conn = new MySqlConnection(db.ConnectionString);
-            }
-            private bool OpenConnection()
-            {
-                try
-                {
-                    conn.Open();
-                    return true;
-                }
-                catch (MySqlException ex)
-                {
-                    MessageBox.Show(ex.Message);
-                    return false;
-                }
-            }
-            private void CloseConnection()
-            {
-                try
-                {
-                    conn.Close();
-                }
-                catch (MySqlException ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-            public void Add(string login, string password)
-            {
-                string sql = "INSERT INTO `dbkeyboards`.`loginpassword` ( `id` , `login` , `password` ) VALUES ( '', @login, @password )";
-                if (OpenConnection())
-                {
-                    using (MySqlCommand cmd = new MySqlCommand(sql, conn))
-                    {
-                        // Добавить параметры
-                        cmd.Parameters.AddWithValue("@login", login);
-                        cmd.Parameters.AddWithValue("@password", password);
-
-                        cmd.ExecuteNonQuery();
-                    }
-                    CloseConnection();
-                }
-            }
-            public List<string> logInfo()
-            {
-                string sql = "SELECT * FROM loginpassword";
-                List<string> list = new List<string>();
-
-                if (OpenConnection())
-                {
-                    MySqlCommand cmd = new MySqlCommand(sql, conn);
-                    MySqlDataReader reader = cmd.ExecuteReader();
-
-                    while (reader.Read())
-                    {
-                        string login;
-                        string password;
-                        login = reader.GetString(1);
-                        password = reader.GetString(2);
-                        list.Add(login); list.Add(password);
-                    }
-                    CloseConnection();
-                }
-                return list;
-            }
-        }
         void rename(Dictionary<string, string> words)
         {
             linkLabel1.Text = words["Регистрация"];
@@ -121,9 +30,9 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             if (Program.language == "eng")
-                rename(MainForm.eng);
+                rename(db.eng());
             else
-                rename(MainForm.rus);
+                rename(db.rus());
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -194,7 +103,7 @@ namespace WindowsFormsApp1
                 if (Program.login == "" && textBox1.Text != "" && textBox2.Text != "")
                 {
                     Program.login = textBox1.Text;
-                    db.Add(textBox1.Text, textBox2.Text);
+                    db.AddUser(textBox1.Text, textBox2.Text);
                     MessageBox.Show("Вы зарегистрировались");
                 }
             }

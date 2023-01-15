@@ -22,7 +22,7 @@ namespace WindowsFormsApp1
             l = label;
             InitializeComponent();
             label1.Text = n.ToString();
-            ProductPB.Image = obj1.picture.Image;
+            ProductPB.ImageLocation = "../../../Pictures/" + obj1.name + ".jpg";
             label2.Text = obj1.name;
         }
 

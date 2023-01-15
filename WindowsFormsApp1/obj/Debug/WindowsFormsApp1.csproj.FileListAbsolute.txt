@@ -16,3 +16,20 @@ D:\Новая папка\keyboards-master\WindowsFormsApp1\obj\Debug\WindowsForm
 D:\Новая папка\keyboards-master\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
 D:\Новая папка\keyboards-master\WindowsFormsApp1\bin\Debug\MySql.Data.dll
 D:\Новая папка\keyboards-master\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
+C:\Users\Ашот\Source\Repos\Aloher1\keyboards\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\Ашот\Source\Repos\Aloher1\keyboards\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\Ашот\Source\Repos\Aloher1\keyboards\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\Ашот\Source\Repos\Aloher1\keyboards\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+C:\Users\Ашот\Source\Repos\Aloher1\keyboards\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.SuggestedBindingRedirects.cache
+C:\Users\Ашот\Source\Repos\Aloher1\keyboards\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AddForm.resources
+C:\Users\Ашот\Source\Repos\Aloher1\keyboards\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.CartForm.resources
+C:\Users\Ашот\Source\Repos\Aloher1\keyboards\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.CartUC.resources
+C:\Users\Ашот\Source\Repos\Aloher1\keyboards\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.MainForm.resources
+C:\Users\Ашот\Source\Repos\Aloher1\keyboards\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ProductForm.resources
+C:\Users\Ашот\Source\Repos\Aloher1\keyboards\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\Ашот\Source\Repos\Aloher1\keyboards\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.UserForm.resources
+C:\Users\Ашот\Source\Repos\Aloher1\keyboards\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\Ашот\Source\Repos\Aloher1\keyboards\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+C:\Users\Ашот\Source\Repos\Aloher1\keyboards\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
+C:\Users\Ашот\Source\Repos\Aloher1\keyboards\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\Ашот\Source\Repos\Aloher1\keyboards\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
