@@ -47,6 +47,7 @@ namespace WindowsFormsApp1
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 address = openFileDialog1.FileName;
+                File.Copy(address, "../../../Pictures/" + textBoxName.Text + ".jpg");
                 pictureBox1.Image = Image.FromFile(address);
             }
         }

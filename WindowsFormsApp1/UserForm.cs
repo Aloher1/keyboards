@@ -116,8 +116,9 @@ namespace WindowsFormsApp1
                     {   Program.login = textBox1.Text;   }
                }
                 if (Program.login == "")            MessageBox.Show("Вы не зарегистрированы");
-                else if (Program.login == "admin")  MessageBox.Show("Вы вошли в аккаунт админа");
-                else                        MessageBox.Show("Вы вошли в аккаунт");
+                else if (Program.login == "admin" &&
+                         textBox2.Text == "admin")  MessageBox.Show("Вы вошли в аккаунт админа");
+                else                                MessageBox.Show("Вы вошли в аккаунт");
                 Close();
             }
         }
