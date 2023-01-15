@@ -1,5 +1,0 @@
-Материал: алюминий/акрил
-Структура: Tray Mount
-Вес: около 1185 грамм
-Формфактор: 75%
-Совместим с KBD75 REV 2.0 Solder PCB, KBD75RGB HOT-SWAP PCB (PER-KEY RGB)

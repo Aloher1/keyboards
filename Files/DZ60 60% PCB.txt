@@ -1,9 +1,0 @@
-DZ60 rev 3.0 solderable PCB, 1.6mm thickness
-DZ60 v2 flex cut solderablePCB, 1.2mm thickness (includes stabilizers shims)
-PCB Port: Type-C
-Software Support: VIA
-RGB support: RGB underglow
-QMK Flash Manual Link
-
-Compatible with Tofu60%, Blade 60%, 60% Plastic, 60% ALUMINUM LOW PROFILE, 60% Bamboo, 60% Wood, KBDfans 5° 60%, D60 HHKB/WKL/WK cases
-Compatible with DZ60 CNC ALUMINUM/BRASS 60% PLATE, 60% CNC'D ALUMINUM PLATE, 60% BRASS ANSI PLATE, 60% PC MATERIAL PLATE, CARBON FIBER 60% PLATE, D60 FR4/ PC PLATE/BRASS

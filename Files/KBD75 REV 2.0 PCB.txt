@@ -1,7 +1,0 @@
-KBD75 PCB Rev1 does NOT support Numpad layout, the KBD75 Rev2 PCB supports
-
-Software Support: VIA
-PCB Port: Type-C
-PCB Version: Solder
-RGB support: RGB underglow
-Fit with KBD75 v1/v2/v3.1, Tofu84, D84 solder version keyboard

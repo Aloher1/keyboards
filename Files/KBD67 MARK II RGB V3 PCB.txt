@@ -1,8 +1,0 @@
-Software Support: VIA
-PCB Port: Type-C
-RGB support: Per-Key RGB on top, no RGB underglow
-PCB Version: Hot-swap
-Switch: 3-pin/5-pin Cherry MX-style
-Compatibility
-
-Compatible with KBD67MarK II, KBD67 lite, Blade65，D65，KBD67v3 aluminum cases

@@ -1,6 +1,0 @@
-Software Support: VIA
-PCB Version: Hot-swap
-PCB Port: Type-C
-RGB support: Per-Key RGB on top, no RGB underglow
-Layout: 60% ANSI layout
-Compatible with Cherry MX-style 3pin/5pin switches
