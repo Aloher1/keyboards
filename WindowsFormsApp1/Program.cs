@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.IO;
 
 namespace WindowsFormsApp1
 {
@@ -103,6 +104,8 @@ namespace WindowsFormsApp1
                     }
                     CloseConnection();
                 }
+                File.Delete("../../../Pictures/" + name + ".jpg");
+                MessageBox.Show("Удалено");
             }
             public Dictionary<string,string> rus()
             {
